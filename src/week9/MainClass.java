@@ -11,15 +11,15 @@ public class MainClass {
 	}
 	
 	
-	public void Employee(String name, double salary) {
-		System.out.printf("Employee name %s and earning %.2f per hour", name, salary);
-	}
-	
+//	public void Employee(String name, double salary) {
+//		System.out.printf("Employee name %s and earning %.2f per hour", name, salary);
+//	}
+//	
 	
 	public static void main(String[] args) {
 		
 		MainClass course = new MainClass();
-		course.Employee("John Doe", 15.99);
+//		course.Employee("John Doe", 15.99);
 		
 		System.out.println();
 		
@@ -40,9 +40,38 @@ public class MainClass {
 		System.out.println(s2);
 		System.out.println(s3);
 		System.out.println(s4);
-				
 		
-		
+		generateEmployee();
+	}
+	
+	public static void generateEmployee() {
+		int i = 0;
+		Employee em = new Employee();
+		while(i<=2) {
+			System.out.print("Enter employee name: ");
+			String name = scn.next();
+			em.setName(name);
+			
+			System.out.print("Enter location: ");
+			String location = scn.next();
+			em.setLocation(location);
+			
+			System.out.print("Enter Salary: ");
+			int salary = scn.nextInt();
+			em.setSalary(salary);
+			
+			
+			Employee emp = new Employee(em.getName());
+			
+			Employee emp1 = new Employee(em.getLocation(), em.getSalary());
+			
+			System.out.println("Employee Information");
+			emp.empName();
+			emp1.empDetails();
+			
+			System.out.println("====================================");
+			i++;
+		}
 	}
 
 }
